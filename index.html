@@ -100,9 +100,9 @@
                   <ul>
                      <li>Designed and developed a test framework to check the client-level impact of stylesheet changes, as opposed to the textual changes highglighted by Git Diffs</li>
                      <li>The tool runs as part of the Maps Stylesheet CI pipeline, compiles the stylesheets (pre and post changes) and replicates iOS client behavior to obtain the client level impact.</li>
-                     <li>This information is then visualized in a web browser locally, and provides detailed insight into the changes being merged. Optionally, the users can choose to upload/persist the diff to a remote server (Orchard).</li>
+                     <li>This information is then visualized in a web browser locally, which provides detailed insight into the changes being merged. Optionally, the users can choose to upload/persist the diff to a remote server (Orchard).</li>
                      <li>The tool operates prior to PRs being merged and dramatically increases the odds of preventing stylesheet regressions.</li>
-                     <li>Tech Stack: <b>Objective-C</b> (Compilation tool for stylesheets and client-bhavior replication), <b>Python/Flask</b> (Main controller and Flask hosts the diff on localhost), <b>d3.js</b> (visualizing the diff data) and Orchard (<b>Heroku-based</b>, for persisting diffs remotely)<li>
+                     <li>Tech Stack: <b>Objective-C</b> (Compilation tool for stylesheets and client-behavior replication), <b>Python/Flask</b> (Main controller and Flask hosts the diff on localhost), <b>d3.js</b> (visualizing the diff data) and Orchard (<b>Heroku-based</b>, for persisting diffs remotely)<li>
                   </ul>
 
                   <b>TARGETED IMAGE ANALYSIS (TIA)</b>, <i>Identifying Display Impact Automatically</i>
@@ -120,8 +120,8 @@
 
                   <b>VECTOR STATS</b>, <i>Providing Real Time Metrics/KPIs on nightly CI builds</i>
                   <ul>
-                     <li>Vector Tiles are built on a nightly basis and they contain the world's map data in a iOS Client friendly format. Vector Stats is an effort to analyze this metadata on a continuous basis and derive relevant metrics and automatically identify anomalies.</li>
-                     <li>Tech Stack: <b>Scala</b> (<b>Spark</b> job that runs on <b>HDFS</b> tile data), <b>Elastic Search</b> (Store the indexed tile level metrics), <b>Kibana</b> (Visualize the metrics geospatially and in other formats), <b>Gradle</b> (Build system)<li>
+                     <li>Vector Tiles are built on a nightly basis and they contain the world's map data in an iOS Client friendly format. Vector Stats is an effort to analyze this metadata on a continuous basis and derive relevant metrics and automatically identify anomalies.</li>
+                     <li>Tech Stack: <b>Scala</b> (<b>Spark</b> job on <b>HDFS</b> tile data), <b>Elastic Search</b> (Store the indexed tile level metrics), <b>Kibana</b> (Visualize the metrics geospatially and in other formats), <b>Gradle</b> (Build system)<li>
                   </ul>
 
                   <b>QUALITATIVE/EXPLORATORY ANALYSIS</b>
@@ -140,7 +140,7 @@
                      </li>
                      <li>TEAM MODULES AS A WEB SERVICE
                         <ul>
-                           <li>A set of web apps that our team provides for users' convenience. Examples include a JSON viewer for tiles, fetching satellite images of a given tile, style attribute hierarchical visualizations, forms to perform routine org wide tasks, to list a few.</li>
+                           <li>A set of web apps that our team provides for users' convenience. Examples include a JSON viewer for tiles, fetching satellite images of a given tile, style attribute hierarchical visualizations, forms to perform routine org-wide tasks, to list a few.</li>
                            <li>Tech Stack: <b>Python</b>(<b>Django</b>, <b>Apache</b>), <b>Jenkins</b> (CI), <b>d3.js</b>(Visualizations)</li>
                         </ul>
                      </li>
@@ -158,7 +158,7 @@
                   <h3>RIDGID Inc.</h3>
                   <p class="info">Backend Developer Intern<span>&bull;</span> <em class="date">Jan 2015 - September 2015</em></p>
 
-                  <b>VENDOR PRODUCT ORDERING SYSTEM</b>
+                  <b>VENDOR PRODUCT ORDER PLACEMENT SYSTEM</b>
                   <ul>
                      <li>Contributed to the backend driving RIDGID's vendor order placement system.</li>
                      <li>Tech Stack: <b>Java</b> (<b>Apache Wicket, Spring, Hibernate &amp; Tomcat</b>)<li>
@@ -229,7 +229,6 @@
                   <li><span class="bar-expand python"></span><em>Python (Django, Flask, OOP)</em></li>
                   <li><span class="bar-expand dataviz"></span><em>Data Visualization &amp; Analytics (ES/Kibana, d3.js, Leaflet.js, Map Reduce, HDFS, Spark)</em></li>
                   <li><span class="bar-expand java"></span><em>Java (OOP, Spring/Wicket/Hibernate)</em></li>
-            
                   <li><span class="bar-expand scala"></span><em>Scala (Spark, HDFS)</em></li>
                   <li><span class="bar-expand devkit"></span><em>Developer Toolkit (Git, Unix, Bash, Jenkins, Gradle)</em></li>
                </ul>
