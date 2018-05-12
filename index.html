@@ -45,11 +45,12 @@
 
          <ul id="nav" class="nav">
             <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Work</a></li>
-            <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>
+            <li><a class="smoothscroll" href="#resume">Resume</a></li>
             <li><a class="smoothscroll" href="#contact">Contact</a></li>
+	         
+<!--             <li><a class="smoothscroll" href="#portfolio">Work</a></li>
+            <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>
+            <li><a class="smoothscroll" href="#contact">Contact</a></li> -->
          </ul> <!-- end #nav -->
 
       </nav> <!-- end #nav-wrap -->
@@ -57,8 +58,9 @@
       <div class="row banner">
          <div class="banner-text">
             <h1 class="responsive-headline">I'm Srini Muthu.</h1>
-            <h3>I'm a <span>full stack SDET at Apple Maps,</span> specializing in <span>Test Design, Tooling and Infrastructure </span>. <a class="smoothscroll" href="#about">Scroll down</a>
-            to learn more about me.</h3>
+            <h2><span>SDET at &#63743; Maps</span></h2>
+            <h3><span>Let's talk Test Frameworks, Data Visualization and <a href="https://books.google.com/books?id=hjEFCAAAQBAJ&source=gbs_navlinks_s", target='_blank', id="clean_code">Clean Code</a>.</span></h3>
+            <h3><a href="https://stackoverflow.com/users/3281476/bruce-wayne" id="stack_overflow" target="_blank">StackOverflow</a> is my bible.</h3>
             <hr />
             <ul class="social">
                <li><a href="https://www.linkedin.com/in/srini-muthu/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
@@ -68,30 +70,191 @@
       </div>
 
       <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+         <a class="smoothscroll" href="#resume"><i class="icon-down-circle"></i></a>
       </p>
 
    </header> <!-- Header End -->
 
 
+      <!-- Resume Section
+   ================================================== -->
+   <section id="resume">
+
+      <!-- Work
+      ----------------------------------------------- -->
+      <div class="row work">
+
+         <div class="three columns header-col">
+            <h1><span>Work</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Apple</h3>
+                  <p class="info">Software Development Engineer in Test, Apple Maps <span>&bull;</span> <em class="date">March 2016 - Present</em></p>
+                  <b>STYLE TESTER</b>, <i>Git Diffs for CSS</i>
+                  <ul>
+                     <li>Designed and developed a test framework to check the client-level impact of stylesheet changes, as opposed to the textual changes highglighted by Git Diffs</li>
+                     <li>The tool runs as part of the Maps Stylesheet CI pipeline, compiles the stylesheets (pre and post changes) and replicates iOS client behavior to obtain the client level impact.</li>
+                     <li>This information is then visualized in a web browser locally, and provides detailed insight into the changes being merged. Optionally, the users can choose to upload/persist the diff to a remote server (Orchard).</li>
+                     <li>The tool operates prior to PRs being merged and dramatically increases the odds of preventing stylesheet regressions.</li>
+                     <li>Tech Stack: <b>Objective-C</b> (Compilation tool for stylesheets and client-bhavior replication), <b>Python/Flask</b> (Main controller and Flask hosts the diff on localhost), <b>d3.js</b> (visualizing the diff data) and Orchard (<b>Heroku-based</b>, for persisting diffs remotely)<li>
+                  </ul>
+
+                  <b>TARGETED IMAGE ANALYSIS (TIA)</b>, <i>Identifying Display Impact Automatically</i>
+                  <ul>
+                     <li>Visually testing every tile on the map is impossible. TIA automatically identifies the tiles that are impacted by Stylesheet changes.</li>
+                     <li>It's a fully automated pipeline which does the following things:<ul>
+                        <li>Identifies the stylesheet changes using the STYLE TESTER module</li>
+                        <li>Runs Map Reduce jobs on close to 500GB worth of the world's tile data, stored in HDFS</li>
+                        <li>Creates a mapping between style attributes and the tiles containing them.</li>
+                        <li>Identifies locations impacted by stylesheet changes, visualizes them in an internal image comparison tool and sends email reports as and when comparisons are ready for display evaluation.</li>
+                     </ul></li>
+                     <li>The tool runs as part of every server side release and helps reduce the scope of display testing without needing to arbitrarily pick locations to analyze.</li>
+                     <li>Tech Stack: <b>Python</b> (Main Controller, API Calls, Email Reports), <b>Objective-C</b> (Identifying Stylesheet changes at the client level), Spectrum (Internal tool for running <b>Map Reduce</b> Jobs on <b>HDFS</b>. Jobs are written in <b>Groovy</b>)<li>
+                  </ul>
+
+                  <b>VECTOR STATS</b>, <i>Providing Real Time Metrics/KPIs on nightly CI builds</i>
+                  <ul>
+                     <li>Vector Tiles are built on a nightly basis and they contain the world's map data in a iOS Client friendly format. Vector Stats is an effort to analyze this metadata on a continuous basis and derive relevant metrics and automatically identify anomalies.</li>
+                     <li>Tech Stack: <b>Scala</b> (<b>Spark</b> job that runs on <b>HDFS</b> tile data), <b>Elastic Search</b> (Store the indexed tile level metrics), <b>Kibana</b> (Visualize the metrics geospatially and in other formats), <b>Gradle</b> (Build system)<li>
+                  </ul>
+
+                  <b>QUALITATIVE/EXPLORATORY ANALYSIS</b>
+                  <ul>
+                     <li>Adhoc analysis centered on assessing vector tile data qualitatively, that addresses specific concerns for that release. Examples include Label differences in Japan, geospatially analyzing transtions in addresses, diversity in types of shops being displayed, to list a few.</li>
+                     <li>Tech Stack: <b>Python</b> (Scripting/Structuring Test Data), <b>ElasticSearch/Kibana</b> (If visualizations are necessary for large datasets), <b>d3.js/Leaflet.js</b> (Hierarchical visualizations/Heatmaps)<li>
+                  </ul>
+
+                  <b>OTHER PROJECTS</b>
+                  <ul>
+                     <li>IMAGE COMPARATOR
+                        <ul>
+                           <li>Given a geoJSON, the tool captures screenshots of the Map, for a specified iOS client, using internal UI automation libraries</li>
+                           <li>Tech Stack: <b>Python</b>(Main Controller), <b>Javascript</b> (Defining UI automation functions), <b>Jenkins</b> (CI)</li>
+                        </ul>
+                     </li>
+                     <li>TEAM MODULES AS A WEB SERVICE
+                        <ul>
+                           <li>A set of web apps that our team provides for users' convenience. Examples include a JSON viewer for tiles, fetching satellite images of a given tile, style attribute hierarchical visualizations, forms to perform routine org wide tasks, to list a few.</li>
+                           <li>Tech Stack: <b>Python</b>(<b>Django</b>, <b>Apache</b>), <b>Jenkins</b> (CI), <b>d3.js</b>(Visualizations)</li>
+                        </ul>
+                     </li>
+
+                  </ul>       
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>RIDGID Inc.</h3>
+                  <p class="info">Backend Developer Intern<span>&bull;</span> <em class="date">Jan 2015 - September 2015</em></p>
+
+                  <b>VENDOR PRODUCT ORDERING SYSTEM</b>
+                  <ul>
+                     <li>Contributed to the backend driving RIDGID's vendor order placement system.</li>
+                     <li>Tech Stack: <b>Java</b> (<b>Apache Wicket, Spring, Hibernate &amp; Tomcat</b>)<li>
+                  </ul>
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Work -->
+
+      <!-- Education
+      ----------------------------------------------- -->
+      <div class="row education">
+
+         <div class="three columns header-col">
+            <h1><span>Education</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>University of Toledo, Ohio</h3>
+                  <p class="info">Masters in Electrical Engineering &amp; Computer Science<span>&bull;</span> <em class="date">Aug 2013 - Dec 2015</em></p>
+                  <ul>
+                     <li>Graduated top of my class, published a Masters thesis on <a href="http://utdr.utoledo.edu/cgi/viewcontent.cgi?article=2991&context=theses-dissertations", target="_blank">Context-Aware Cache Management in Android Operating Systems</a></li>
+                     <li>The thesis attempted to improve Android's LRU based in-memory cache algorithm, by inorporating an app-prediction scheme, based on user behavior and contextual input.</li>
+                     <li>Developed a third party Android application (using Android Studio) for student volunteers to install on their devices, which monitored the memory cache through system calls and tracked the relevant cache metrics for the A/B schemes.</li>
+                  </ul>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>BITS Pilani University, India</h3>
+                  <p class="info">MSc. (Tech) Information Systems <span>&bull;</span> <em class="date">May 2009 - May 2013</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Education -->
+
+      <!-- Skills
+      ----------------------------------------------- -->
+      <div class="row skill">
+
+         <div class="three columns header-col">
+            <h1><span>Skills</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="bars">
+
+               <ul class="skills">
+                  <li><span class="bar-expand python"></span><em>Python (Django, Flask, OOP)</em></li>
+                  <li><span class="bar-expand dataviz"></span><em>Data Visualization &amp; Analytics (ES/Kibana, d3.js, Leaflet.js, Map Reduce, HDFS, Spark)</em></li>
+                  <li><span class="bar-expand java"></span><em>Java (OOP, Spring/Wicket/Hibernate)</em></li>
+            
+                  <li><span class="bar-expand scala"></span><em>Scala (Spark, HDFS)</em></li>
+                  <li><span class="bar-expand devkit"></span><em>Developer Toolkit (Git, Unix, Bash, Jenkins, Gradle)</em></li>
+               </ul>
+
+            </div><!-- end skill-bars -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End skills -->
+
+   </section> <!-- Resume Section End-->
+
    <!-- About Section
    ================================================== -->
-   <section id="about">
+   <section id="contact">
 
       <div class="row">
 
          <div class="three columns">
 
-            <img class="profile-pic"  src="images/profile.png" alt="" />
+            <img class="profile-pic"  src="images/profile.jpg" alt="" />
 
          </div>
 
          <div class="nine columns main-col">
-
-            <h2>About Me</h2>
-
-            <p>
-            </p>
 
             <div class="row">
 
@@ -99,7 +262,6 @@
 
                   <h2>Contact Details</h2>
                   <p class="address">
-						   <span>Srini Muthu</span><br>
 						   <span>Apple<br>
                            Srini Muthu<br> 
                            One Apple Park Way, 272-3BD<br>
@@ -124,143 +286,6 @@
       </div>
 
    </section> <!-- About Section End-->
-
-
-   <!-- Resume Section
-   ================================================== -->
-   <section id="resume">
-
-      <!-- Education
-      ----------------------------------------------- -->
-      <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span>Education</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>University of Toledo, Ohio</h3>
-                  <p class="info">Masters in Computer Science<span>&bull;</span> <em class="date">Dec 2015</em></p>
-
-                  <p>
-                  Graduated with honors. Published a Masters thesis on Context-Aware Cache Management Algorithm in Android Operating Systems.
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>BITS Pilani University, India</h3>
-                  <p class="info">MSc. (Tech) Information Systems <span>&bull;</span> <em class="date">May 2013</em></p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Education -->
-
-
-      <!-- Work
-      ----------------------------------------------- -->
-      <div class="row work">
-
-         <div class="three columns header-col">
-            <h1><span>Work</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Apple</h3>
-                  <p class="info">SDET, Apple Maps <span>&bull;</span> <em class="date">March 2016 - Present</em></p>
-
-                  <p>
-                  Image Comparator (JS, UIA2 libraries, Python)<br>
-                  StyleTester (Git Diff Replacement for CSS  Change Impact, d3.js, flask, Apache based internal server, Objective-C differ)<br>
-                  Targeted Image Analysis (Extension of StyleTester, Hadoop/Map Reduce, Python, Jenkins, External APIs borne out of Image Comparator)
-                  Map Reduce based Checks (Groovy Checks/ Gradle Build system)
-                  Qualitative/Exploratory analysis (Python, Elastic Search/Kibana, d3.js)
-                  Stat Modelling (Scala, Elastic Search/Kibana, HDFS data)
-                  Team modules as a web service (Django, Apache, CSS)
-                  Hive/Spark queries to retrieve targeted data for functional testing
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>RIDGID Inc.</h3>
-                  <p class="info">Full Stack Developer Intern<span>&bull;</span> <em class="date">Jan 2015 - September 2015</em></p>
-
-                  <p>
-                     Spring/Wicket backend for Vendor ordering system
-                     d3.js data visualizations for product order patterns
-                     HTML5, CSS3, Bootstrap JS Job application website
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Work -->
-
-
-      <!-- Skills
-      ----------------------------------------------- -->
-      <div class="row skill">
-
-         <div class="three columns header-col">
-            <h1><span>Skills</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <p>Proficient in Python (d3.js/Bootstrap/Elastic Search for front-end/data analytics, Flask/ Django backend)<br>
-            Sounds understanding of Object Oriented Programming.<br>
-            Experience with handling big data (Map Reduce/HDFS, Elastic Search/Kibana, Hive/Spark)
-            Experience with Jenkins/Gradle/Maven and other CI/build sytems
-            Highly proficient in Git/Unix/Bash
-            </p>
-
-				<div class="bars">
-
-				   <ul class="skills">
-					   <li><span class="bar-expand photoshop"></span><em>Python (Django, Flask)</em></li>
-                  <li><span class="bar-expand illustrator"></span><em>Java (OOP, Android Thesis App, Spring/Wicket)</em></li>
-						<li><span class="bar-expand wordpress"></span><em>Javascript (d3.js, Bootstrap)</em></li>
-						<li><span class="bar-expand css"></span><em>Test Framework Design &amp; Implementation</em></li>
-						<li><span class="bar-expand html5"></span><em>Data Visualization &amp; Analytics (ES/Kibana, d3.js, Hadoop/Map Reduce, Hive/Spark queries on HDFS)</em></li>
-                  <li><span class="bar-expand jquery"></span><em>Git</em></li>
-                  <li><span class="bar-expand jquery"></span><em>Jenkins and other CI/build systems</em></li>
-					</ul>
-
-				</div><!-- end skill-bars -->
-
-			</div> <!-- main-col end -->
-
-      </div> <!-- End skills -->
-
-   </section> <!-- Resume Section End-->
 
 
 
